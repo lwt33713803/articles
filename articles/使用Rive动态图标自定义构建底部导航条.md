@@ -2,7 +2,7 @@
 
 ## 结合 Rive 动态图标库构建自定义底部导航条
 
-#### 完成本文后的思考 - TODO
+#### 完成本文后的思考 
 
 1. 与lottie动画比较优劣在哪里？
 
@@ -16,7 +16,7 @@
 
 2. 扩展并实现一个其他动画。
 
-   
+   见文章尾部
 
 今天我将用 Flutter 然后结合 Rive 的动态图标库构建一个动态底部导航条，具体效果预览图如下：
 
@@ -450,5 +450,113 @@ class AnimatedBar extends StatelessWidget {
     );
   }
 }
+```
+
+
+
+### 除了 menu，其他用法：
+
+大体步骤：
+
+1. RiveAnimation.asset 声明资源
+
+2. 声明变量存储 controller 控制器以及触发器
+
+3. 声明初始化函数，初始化 触发器以及控制器信息
+
+   
+
+```
+import 'package:demo_bottom_button/RiveModel.dart';
+import 'package:flutter/material.dart';
+import 'package:rive/rive.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+const Color bottomNavBgColor = Color(0xFF17203A);
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return const BottomNavWithAnimatedIcons();
+  }
+}
+
+class BottomNavWithAnimatedIcons extends StatefulWidget {
+  const BottomNavWithAnimatedIcons({super.key});
+
+  @override
+  State<BottomNavWithAnimatedIcons> createState() =>
+      _BottomNavWithAnimatedIcons();
+}
+
+class _BottomNavWithAnimatedIcons extends State<BottomNavWithAnimatedIcons> {
+
+  late SMIBool riveIconInputs1;
+  late SMITrigger riveIconInputs2;
+  late SMITrigger riveIconInputs3;
+
+  late StateMachineController? controllers;
+
+
+  void riveOnInIt(Artboard artBoard, {required String stateMachineName}) {
+    StateMachineController? controller =
+    StateMachineController.fromArtboard(artBoard, stateMachineName);
+    artBoard.addController(controller!);
+    controllers = controller;
+    riveIconInputs1 = controller.findInput<bool>('isHover') as SMIBool;
+    riveIconInputs2 = controller.findInput<bool>('Pressed') as SMITrigger;
+    riveIconInputs3 = controller.findInput<bool>('Back') as SMITrigger;
+  }
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("DEMO"),
+        ),
+        body: Column(
+          children: [
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 300,
+              color: Colors.black12,
+              child: RiveAnimation.asset(
+                "assets/btn.riv",
+                artboard: 'Radiobutton',
+                onInit: (artBoard) {
+                  riveOnInIt(artBoard,
+                      stateMachineName: 'Radiobutton');
+                },
+              ),
+            ),
+            ElevatedButton(onPressed: (){
+              riveIconInputs1.change(true);
+            }, child:Text("hover")),
+            ElevatedButton(onPressed: (){
+              riveIconInputs2.fire();
+            }, child:Text("pressed")),
+            ElevatedButton(onPressed: (){
+              riveIconInputs3.fire();
+            }, child:Text("back"))
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 ```
 
