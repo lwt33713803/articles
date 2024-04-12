@@ -47,6 +47,9 @@ function addEvent(type,element,func) {
     return addEvent(type,element,func);
 }
 ```
+
+将上面放在立即执行函数中，这样在页面加载完就可以得到一个包裹了正确逻辑的函数了。
+
 ---
 使用扩展
 
