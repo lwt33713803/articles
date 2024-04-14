@@ -8,8 +8,9 @@
 3. BOM - 操作浏览器对象模型 
     它提供了访问浏览器窗口和浏览器本身的对象。
     BOM并不是ECMAScript的一部分，而是浏览器厂商自行实现的一组对象和方法
-4. Node.js - 是一个基于V8引擎的JavaScript运行时环境，使JavaScript可以在服务器端运行。
-5. 其他实现：
+4. Node.js - 也就是说，实际上它是对GoogleV8引擎（应用于Google Chrome浏览器)进行了封装优化扩展，然后提供API调用。
+5. V8 - js引擎。
+6. 其他实现：
     Etherjs - 用于和区块链交互的js库。类似于 BOM 和 DOM，他提供的是和区块链交互的API。
 
 ### 总的来说：
