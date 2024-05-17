@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "随笔.md",
+                "file": "flutter/Flutter打包DMG.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "随笔.md",
+                "file": "flutter/Flutter打包DMG.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "随笔.md",
+                "file": "flutter/Flutter打包DMG.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "随笔.md"
+                "file": "flutter/Flutter打包DMG.md"
               }
             }
           }
@@ -146,10 +146,31 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "5095a0df441a89e4",
+  "active": "59b15b602c3e9243",
   "lastOpenFiles": [
-    "README.md",
+    "assets/images/image.png",
+    "others/资源，源码，开源收藏.md",
+    "flutter/DART字节.md",
+    "flutter/DART 的 Future 和 Stream.md",
+    "rust/RUST宏.md",
+    "others/静态链接库和动态链接库.md",
+    "flutter/使用Rive动态图标自定义构建底部导航条.md",
+    "flutter/使用Mixin，在Flutter Riverpod 中组织你的全局Providers.md",
+    "js/vue 针对REF的性能优化方案.md",
+    "js/js知识点梳理.md",
+    "js/JS惰性函数 - TODO.md",
+    "rust/rust爬虫.md",
+    "articles/使用Rive动态图标自定义构建底部导航条.md",
+    "articles",
+    "rust/RUST 零成本抽象.md",
+    "rust/RUST是什么？.md",
+    "rust/RUST学习资料整理（持续更新）.md",
+    "flutter/Flutter与原生进行交互通道.md",
+    "flutter/Flutter通过FFI调用so库.md",
+    "flutter/Flutter构建的项目创建.dmg文件.md",
+    "flutter/DART注解 （todo）.md",
+    "flutter/DAET 中的字节.md",
     "随笔.md",
-    "flutter/使用Mixin，在Flutter Riverpod 中组织你的全局Providers.md"
+    "README.md"
   ]
 }
